@@ -1,4 +1,7 @@
 import express from 'express';
+
+
+
 import { createProprietario }
  from '../controllers/proprietario/CreateProprietario.js';
 

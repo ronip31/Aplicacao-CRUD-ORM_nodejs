@@ -1,5 +1,4 @@
 import Proprietario from '../../models/Proprietario.js';
-import ProprietarioVeiculo from '../../models/ProprietarioVeiculo.js';
 
 export const createProprietario = async (req, res) => {
     const { cpf, nome, fone } = req.body;
@@ -17,3 +16,4 @@ export const createProprietario = async (req, res) => {
         res.status(500).json({ error: 'Erro interno do servidor.' });
     }
 };
+

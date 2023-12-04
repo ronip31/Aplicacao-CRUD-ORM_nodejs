@@ -1,8 +1,14 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const veiculoSelect = document.getElementById('veiculo');
 
+
+    const opcaoInicial = document.createElement('option');
+    opcaoInicial.value = '';
+    opcaoInicial.text = 'Selecione:';
+    veiculoSelect.appendChild(opcaoInicial);
+
     try {
-        // Preencher lista de veículos
+
         const veiculosResponse = await fetch('/api/veiculos');
         const veiculosData = await veiculosResponse.json();
 
@@ -14,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     } catch (error) {
         console.error('Erro ao obter a lista de veículos:', error.message);
-        // Lide com o erro, como exibir uma mensagem para o usuário.
+
     }
 });
 
@@ -31,7 +37,7 @@ async function excluirVeiculo() {
 
         if (response.ok) {
             document.getElementById('mensagem').textContent = data.message;
-            // Remover o veículo excluído da lista de veículos
+
             veiculoSelect.remove(veiculoSelect.selectedIndex);
         } else {
             document.getElementById('mensagem').textContent = data.message;

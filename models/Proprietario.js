@@ -1,6 +1,4 @@
-// Proprietario.js
 import { sequelize } from "../config/db.js";
-import Veiculo from "./Veiculo.js";
 
 const Proprietario = sequelize.define('Proprietario', {
     cpf: {

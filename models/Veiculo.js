@@ -1,4 +1,3 @@
-// Veiculo.js
 import { sequelize } from "../config/db.js";
 import TipoVeiculo from "./TipoVeiculo.js";
 
