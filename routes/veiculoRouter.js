@@ -25,7 +25,7 @@ router.get('/veiculos', getAllVeiculos);
 router.get('/veiculos/:placa_veiculo', getVeiculoByPlaca);
 
 // Rota para atualizar um veículo por placa
-router.put('/veiculos/:placa_veiculo', updateVeiculoByPlaca);
+//router.put('/veiculos/:placa_veiculo', updateVeiculoByPlaca);
 
 // Rota para deletar um veículo por placa
 router.delete('/deleteveiculos/:placa_veiculo', deleteVeiculoByPlaca);

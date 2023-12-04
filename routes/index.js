@@ -27,21 +27,6 @@ app.get('/', (req, res) => {
 app.use('/api', loginRouter);
 
 
-
-app.get('/login', (req, res) => {
-    console.log("Página /login acessada");
-    const currentFileUrl = import.meta.url;
-    const currentDir = path.dirname(fileURLToPath(currentFileUrl));
-    res.sendFile(path.join(currentDir, '..', 'public','login.html'));
-});
-
-
-// Rotas específicas
-app.use('/api', verifyJWT,proprietarioRouter);
-app.use('/api',verifyJWT, veiculoRouter);
-app.use('/api',verifyJWT, associacaoRouter);
-
-
 app.post('/enviar-token', (req, res) => {
     const token = req.body;
     console.log('Token recebido no servidor:', token);
@@ -60,6 +45,20 @@ app.post('/remove-token', (req, res) => {
     
     res.json({ message: 'Token recebido com sucesso' });
 });
+
+app.get('/login', (req, res) => {
+    console.log("Página /login acessada");
+    const currentFileUrl = import.meta.url;
+    const currentDir = path.dirname(fileURLToPath(currentFileUrl));
+    res.sendFile(path.join(currentDir, '..', 'public','login.html'));
+});
+
+
+// Rotas específicas
+app.use('/api', verifyJWT,proprietarioRouter);
+app.use('/api',verifyJWT, veiculoRouter);
+app.use('/api',verifyJWT, associacaoRouter);
+
 
 
 app.get('/cadastroproprietario',verifyJWT, async (req, res) => {

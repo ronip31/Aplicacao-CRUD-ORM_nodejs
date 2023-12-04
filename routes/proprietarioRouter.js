@@ -26,9 +26,9 @@ router.get('/proprietarios', getAllProprietarios);
 router.get('/proprietarios/:cpf', getProprietarioByCPF);
 
 // Rota para atualizar um proprietário por CPF
-router.put('/proprietarios/:cpf', updateProprietarioByCPF);
+//router.put('/proprietarios/:cpf', updateProprietarioByCPF);
 
 // Rota para deletar um proprietário por CPF
-router.delete('/proprietarios/:cpf', deleteProprietarioByCPF);
+//router.delete('/proprietarios/:cpf', deleteProprietarioByCPF);
 
 export default router;
